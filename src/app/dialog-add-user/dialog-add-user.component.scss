@@ -1,0 +1,23 @@
+.input {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    padding: unset;
+    font-size: 32px !important;
+}
+
+.input-full {
+    width: 100%;
+}
+
+.dialog {
+    max-width: 480px;
+}
