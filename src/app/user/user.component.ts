@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent {
+  displayedColumns: string[] = ['Name', 'Birth Date', 'Email', 'Street', 'Zip code', 'City'];
 
   constructor(public dialog: MatDialog){}
 

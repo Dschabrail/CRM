@@ -19,5 +19,15 @@ h1 {
 }
 
 .dialog {
+    position: relative;
     max-width: 480px;
+    overflow: hidden;
+}
+
+mat-progress-bar {
+    position: absolute;
+    left: -24px;
+    right: -24px;
+    top: 0;
+    width: calc(100% + 48px);
 }

@@ -11,3 +11,15 @@
 .mat-mdc-dialog-surface {
     overflow:hidden !important;
 }
+
+.user-table {
+    th {
+        color: rgba(0, 0, 0, 0.5);
+        text-align: start;
+        font-size: 14px;
+        font-weight: 500;
+    }
+   
+    width: 100%;
+
+}

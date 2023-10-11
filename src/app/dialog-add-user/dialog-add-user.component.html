@@ -1,39 +1,40 @@
 <div matDialogContent class="dialog">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
     <h1 mat-dialog-title>Add User</h1>
     <div class="input">
         <mat-form-field appearance="outline">
             <mat-label>First Name</mat-label>
-            <input [(ngModel)]="user.firstName" matInput>
+            <input [disabled]="loading" [(ngModel)]="user.firstName" matInput>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Last Name</mat-label>
-            <input [(ngModel)]="user.lastName" matInput>
+            <input [disabled]="loading" [(ngModel)]="user.lastName" matInput>
         </mat-form-field>
     </div>
     <div>
         <mat-form-field class="input-full" appearance="outline">
             <mat-label>Birth Date</mat-label>
-            <input [(ngModel)]="birthDate" matInput [matDatepicker]="picker">
+            <input [disabled]="loading" [(ngModel)]="birthDate" matInput [matDatepicker]="picker">
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field class="input-full" appearance="outline">
             <mat-label>Street + House No.</mat-label>
-            <input [(ngModel)]="user.street" matInput>
+            <input [disabled]="loading" [(ngModel)]="user.street" matInput>
         </mat-form-field>
         <div class="input">
             <mat-form-field appearance="outline">
                 <mat-label>Zip code</mat-label>
-                <input [(ngModel)]="user.zipCode" matInput>
+                <input [disabled]="loading" [(ngModel)]="user.zipCode" matInput type="number">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>City</mat-label>
-                <input [(ngModel)]="user.city" matInput>
+                <input [disabled]="loading" [(ngModel)]="user.city" matInput>
             </mat-form-field>
         </div>
     </div>
     <div class="buttons">
-        <button mat-raised-button (click)="addUser()">Add</button>
-        <button mat-raised-button (click)="addUser()">Cancel</button>
+        <button [disabled]="loading" mat-raised-button (click)="addUser()">Add</button>
+        <button [disabled]="loading" mat-raised-button (click)="addUser()">Cancel</button>
     </div>
 </div>
