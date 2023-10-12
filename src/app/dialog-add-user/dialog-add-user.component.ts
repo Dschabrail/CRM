@@ -37,6 +37,10 @@ export class DialogAddUserComponent {
       });
   }
 
+  closeDialog() {
+    this.dialogRef.close();
+  }
+
   getUserRef() {
     return collection(this.firestore, 'users');
   }
