@@ -1,0 +1,32 @@
+.profil-card {
+  min-height: 400px;
+  background-color: #00b4d8;
+  position: relative;
+  color: white;
+}
+
+.profil-img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.profil {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.info {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 16px;
+  top: 9px;
+}

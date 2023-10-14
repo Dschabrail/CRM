@@ -1,0 +1,47 @@
+<div matDialogContent class="dialog">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h1 mat-dialog-title>Edit User</h1>
+    <div class="input">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.firstName" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.lastName" matInput>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline" class="input-full">
+            <mat-label>E-Mail</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.email" matInput type="email">
+        </mat-form-field>
+        <mat-form-field class="input-full" appearance="outline">
+            <mat-label>Birth Date</mat-label>
+            <input [disabled]="loading" matInput [matDatepicker]="picker" [(ngModel)]="birthDate">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="input-full" appearance="outline">
+            <mat-label>Street + House No.</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.street" matInput>
+        </mat-form-field>
+        <div class="input">
+            <mat-form-field appearance="outline">
+                <mat-label>Zip code</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.zipCode" matInput type="number">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.city" matInput>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="buttons-cont">
+        <button class="delete-btn" [disabled]="loading" mat-raised-button (click)="deleteUser()">Delete</button>
+        <div class="buttons">
+            <button [disabled]="loading" mat-raised-button (click)="closeDialog()">Cancel</button>
+            <button [disabled]="loading" mat-raised-button (click)="save()">Add</button>
+        </div>
+    </div>
+</div>

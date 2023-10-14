@@ -26,6 +26,7 @@
     list-style-type: none;
     padding: unset;
     margin: unset;
+    padding-top: 24px;
     display: flex;
     flex-direction: column;
     li {
@@ -45,4 +46,9 @@
 
 .router-container {
     padding: 16px 56px;
+}
+
+.toolbar {
+    background-color: #00b4d8;
+    color: white;
 }

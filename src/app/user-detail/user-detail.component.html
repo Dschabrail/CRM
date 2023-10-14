@@ -1,1 +1,28 @@
-<p>user-detail works!</p>
+<mat-card class="profil-card">
+    <button class="icon" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="editMenu()"><mat-icon>edit</mat-icon>
+            <span>Edit</span></button>
+      </mat-menu>
+    <div class="profil">
+        <img class="profil-img" src="./assets/img/profil.png" alt="">
+        <div>
+            <h1>{{user.firstName}} {{user.lastName}}</h1>
+            <span>{{user.email}}</span><br>
+            <span>{{formattedDate}}</span>
+        </div>
+    </div>
+</mat-card>
+
+<mat-card class="info">
+    <mat-card-header>
+        <mat-card-title>Address</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <span>{{user.street}}</span> <br>
+        <span>{{user.zipCode}} {{user.city}}</span>
+    </mat-card-content>
+</mat-card>
+

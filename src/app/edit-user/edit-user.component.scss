@@ -1,0 +1,44 @@
+.input {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.buttons-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    gap: 24px;
+}
+
+h1 {
+    padding: unset;
+    font-size: 32px !important;
+}
+
+.input-full {
+    width: 100%;
+}
+
+.dialog {
+    position: relative;
+    max-width: 480px;
+    overflow: hidden;
+}
+
+mat-progress-bar {
+    position: absolute;
+    left: -24px;
+    right: -24px;
+    top: 0;
+    width: calc(100% + 48px);
+}
+
+.delete-btn {
+    background-color: rgb(227, 47, 47) !important;
+    color: white !important;
+   
+}
