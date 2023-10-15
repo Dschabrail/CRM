@@ -1,15 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 import { MatDialog } from '@angular/material/dialog';
-import {
-  Firestore,
-  collection,
-  addDoc,
-  onSnapshot,
-  getFirestore,
-  doc,
-} from '@angular/fire/firestore';
 import { User } from 'src/models/user.class';
+import { FirebaseService } from '../firebase/firebase.service';
 
 @Component({
   selector: 'app-user',
@@ -17,35 +10,15 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  firestore: Firestore = inject(Firestore);
-  unsubList;
   user = new User();
-  allUsers = [];
 
-  constructor(public dialog: MatDialog) {
-    this.unsubList = onSnapshot(this.getUserRef(), (list) => {
-      this.allUsers = [];
-      list.forEach((element) => {
-        const userData = element.data();
-        userData['id'] = element.id;
-        this.allUsers.push(userData);
-        console.log(userData);
-      });
-    });
+  constructor(public dialog: MatDialog, public usersService: FirebaseService) {}
+
+  ngOnInit(): void {
+    this.usersService.getUser();
   }
-
-  
-  ngOnInit(): void {}
 
   openDialog() {
     this.dialog.open(DialogAddUserComponent);
-  }
-
-  getUserRef() {
-    return collection(this.firestore, 'users');
-  }
-
-  ngOnDestroy() {
-    this.unsubList();
   }
 }
