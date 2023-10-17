@@ -1,5 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component} from '@angular/core';
 import { FirebaseService } from '../firebase/firebase.service';
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,8 +9,11 @@ import { FirebaseService } from '../firebase/firebase.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+ 
 
   constructor(public usersService: FirebaseService) {
     this.usersService.getUser();
   }
+
+  
 }

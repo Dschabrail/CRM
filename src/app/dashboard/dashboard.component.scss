@@ -1,23 +1,74 @@
+section {
+  min-height: calc(100vh - 128px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    width: fit-content;
-    padding: 16px 24px;
-    position: relative;
-    cursor: default;
-    h2 {
-        font-size: 24px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  width: 33.5%;
+  padding: 60px 24px;
+  position: relative;
+  cursor: default;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.6);
+  mat-card-title {
+    font-size: 24px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 32px;
+  }
 }
 
 .seperator {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #00b4d8;
-    z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #00b4d8;
+  z-index: 1;
+}
+
+.first-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 35vh;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+}
+
+.second-row {
+  width: 100%;
+
+  height: 50vh;
+}
+
+.bar-card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doughnut-card {
+  height: 100%;
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .doughnut {
+    height: 100%;
+  }
 }

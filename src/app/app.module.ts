@@ -26,6 +26,9 @@ import { MatTableModule } from '@angular/material/table';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { DoughnutComponent } from './doughnut/doughnut.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     DialogAddUserComponent,
     UserDetailComponent,
     EditUserComponent,
+    BarChartComponent,
+    DoughnutComponent,
   ],
   imports: [
     BrowserModule,

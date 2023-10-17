@@ -45,8 +45,12 @@ export class FirebaseService {
     this.unsubSingle = onSnapshot(
       this.getSingleDocRef('users', this.userId),
       (element) => {
+        
+        
         this.singleUser = element.data();
-        this.formattedBirthDate();
+        console.log(this.singleUser);
+        this.formattedBirthDate(); 
+        
       }
     );
   }
@@ -65,6 +69,7 @@ export class FirebaseService {
 
   async addUser() {
     this.loading = true;
+    this.user.birthDate = this.birthDate.getTime();
     await addDoc(this.getUserRef(), this.user.toJSON()).catch((e) => {
       console.log(e);
     }).then(() => {

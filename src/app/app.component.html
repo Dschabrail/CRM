@@ -1,24 +1,22 @@
 <mat-drawer-container class="mat-drawer-container" autosize>
-    <mat-drawer #drawer class="sidenav" mode="side" [opened]="true">
+    <mat-drawer *ngIf="sidenavOpen" #drawer class="sidenav" mode="side" [opened]="true">
         <div class="logo">
             <img src="./assets/img/logo.png" alt="logo">
+            <mat-icon class="arrow" (click)="sidenavToggle()" *ngIf="icon">arrow_back</mat-icon>
         </div>
         <ul class="menu-items">
-            <li routerLink="/"><mat-icon>dashboard</mat-icon>Dashboard</li>
-            <li routerLink="/user"><mat-icon>account_circle</mat-icon>User</li>
-            <li routerLink="/user"><mat-icon>logout</mat-icon>Logout</li>
+            <li (click)="closeSidenav()" routerLink="/"><mat-icon>dashboard</mat-icon>Dashboard</li>
+            <li (click)="closeSidenav()" routerLink="/user"><mat-icon>account_circle</mat-icon>User</li>
+            <li (click)="closeSidenav()" routerLink="/user"><mat-icon>logout</mat-icon>Logout</li>
         </ul>
     </mat-drawer>
-    <div class="example-sidenav-content">
-        <mat-toolbar class="toolbar">
-
-            <mat-toolbar-row>
-                <mat-icon class="menu-icon" (click)="drawer.toggle()">menu</mat-icon>
-                <span>Simple CRM</span>
-            </mat-toolbar-row>
-        </mat-toolbar>
-    </div>
-    <div class="router-container">
+    <mat-toolbar class="toolbar" *ngIf="!displayNone">
+        <mat-toolbar-row>
+            <mat-icon class="menu-icon" (click)="sidenavToggle()">menu</mat-icon>
+            <span>Simple CRM</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="router-container" *ngIf="!displayNone">
         <router-outlet></router-outlet>
     </div>
 </mat-drawer-container>
