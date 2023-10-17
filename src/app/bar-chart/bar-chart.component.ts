@@ -20,8 +20,7 @@ constructor(public usersService: FirebaseService) {}
   }
 
 createChart(){
-  
-  this.chart =  new Chart("MyChart", {
+  this.chart = new Chart("MyChart", {
     type: 'bar',
     data: {
       labels: ['age <= 18', 'age <= 35', 'age <= 50', 'age <= 100'],
@@ -33,20 +32,45 @@ createChart(){
     },
     options: {
       responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      },
       plugins: {
         title: {
           display: true,
-          text: 'Age Groups of Users' 
+          text: 'Age Groups of Users',
+          font: {
+            size: 18,
+            weight: 'bold',
+          }
+        },
+        legend: {
+          labels: {
+            font: {
+              size: 16,
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            font: {
+              size: 16,
+              weight: 'bold',
+            }
+          }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            font: {
+              size: 16,
+              weight: 'bold',
+            }
+          }
         }
       }
     }
-  });} 
-
+  });
+}
   getTimestamp() {
     for (let i = 0; i < this.usersService.allUsers.length; i++) {
        let unix = this.usersService.allUsers[i].birthDate;

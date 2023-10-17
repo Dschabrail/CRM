@@ -1,5 +1,5 @@
 .mat-drawer-container {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .sidenav {
@@ -47,6 +47,7 @@
 
 .router-container {
   padding: 16px 56px;
+  min-height: calc(100vh - 96px);
 }
 
 .toolbar {
@@ -66,5 +67,11 @@
 @media (max-width: 1070px) {
   .sidenav {
     width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .router-container {
+    padding: 24px 16px;
   }
 }

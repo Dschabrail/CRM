@@ -1,9 +1,9 @@
 section {
-  min-height: calc(100vh - 128px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
 }
 
 .card {
@@ -41,6 +41,7 @@ section {
   justify-content: space-between;
   width: 100%;
   height: 35vh;
+  max-width: 1600px;
 }
 
 .bar {
@@ -50,8 +51,8 @@ section {
 
 .second-row {
   width: 100%;
-
-  height: 50vh;
+  height: 53vh;
+  max-width: 1600px;
 }
 
 .bar-card {
@@ -72,3 +73,43 @@ section {
     height: 100%;
   }
 }
+
+@media (max-width: 1070px) {
+  .doughnut {
+    width: max-content;
+  }
+}
+@media (max-width: 660px) {
+  .first-row {
+    flex-direction: column;
+    height: fit-content;
+    gap: 24px;
+  }
+  .doughnut-card {
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+    height: 260px;
+  }
+  section {
+    gap: 24px;
+  }
+  .second-row {
+    height: fit-content;
+  }
+}
+
+@media (max-width: 560px) {
+  .bar-card {
+    height: 310px;
+  }
+}
+
+@media (max-width: 400px) {
+  .doughnut {
+    width: 95%;
+  }
+}
+
+

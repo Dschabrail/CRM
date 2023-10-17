@@ -2,7 +2,7 @@
     <mat-drawer *ngIf="sidenavOpen" #drawer class="sidenav" mode="side" [opened]="true">
         <div class="logo">
             <img src="./assets/img/logo.png" alt="logo">
-            <mat-icon class="arrow" (click)="sidenavToggle()" *ngIf="icon">arrow_back</mat-icon>
+            <mat-icon *ngIf="icon" class="arrow" (click)="sidenavToggle()" >arrow_back</mat-icon>
         </div>
         <ul class="menu-items">
             <li (click)="closeSidenav()" routerLink="/"><mat-icon>dashboard</mat-icon>Dashboard</li>

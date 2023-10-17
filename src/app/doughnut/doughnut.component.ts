@@ -47,11 +47,20 @@ export class DoughnutComponent implements OnInit {
         plugins: {
           title: {
             display: true,
-            text: 'Users by City', // Deine Überschrift
+            text: 'Users by City',
+            font: {
+              size: 18,
+              weight: 'bold',
+            },
           },
           legend: {
-            position: 'left', // Legende auf der linken Seite anzeigen
-            align: 'center', // Ausrichtung der Legende
+            position: 'left',
+            align: 'center',
+            labels: {
+              font: {
+                size: 16,
+              },
+            },
           },
         },
       },

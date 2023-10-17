@@ -9,3 +9,12 @@
         height: 90% !important;
     }
 }
+
+@media(max-width: 660px) {
+    .chart-container{
+        canvas {
+            height: fit-content !important;
+        }
+    }
+    
+}

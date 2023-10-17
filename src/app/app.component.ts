@@ -16,6 +16,7 @@ export class AppComponent {
       this.showIcon();
     } else {
       this.sidenavOpen = false;
+      this.showIcon();
     }
   }
 
@@ -36,6 +37,8 @@ export class AppComponent {
   showIcon() {
     if (window.innerWidth <= 1070) {
       this.icon = true;
+    } else {
+      this.icon = false;
     }
   }
 }
