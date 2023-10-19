@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,11 @@ export class AppComponent {
   sidenavOpen = false;
   displayNone = false;
   icon = false;
+  onStartpage = true;
+
+constructor(private router: Router) {
+  this.checkRoute()
+}
 
   sidenavToggle() {
     if (this.sidenavOpen == false) {
@@ -40,5 +46,18 @@ export class AppComponent {
     } else {
       this.icon = false;
     }
+  }
+
+  checkRoute() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/') {
+          this.onStartpage = true;
+          this.sidenavOpen = false;
+        } else {
+          this.onStartpage = false;
+        }
+      }
+    });
   }
 }

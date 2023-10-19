@@ -74,4 +74,7 @@
   .router-container {
     padding: 24px 16px;
   }
+  .router-container{
+    min-height: calc(100vh - 104px);
+  }
 }

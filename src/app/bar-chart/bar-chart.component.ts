@@ -5,76 +5,79 @@ import { FirebaseService } from '../firebase/firebase.service';
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.scss']
+  styleUrls: ['./bar-chart.component.scss'],
 })
 export class BarChartComponent implements OnInit {
-  chart: any; 
+  chart: any;
   public userCountByAgeGroup = [0, 0, 0, 0];
   timestamp = [];
 
-constructor(public usersService: FirebaseService) {}
+  constructor(public usersService: FirebaseService) {}
   ngOnInit(): void {
     this.getTimestamp();
     this.getAgeGroup();
     this.createChart();
   }
 
-createChart(){
-  this.chart = new Chart("MyChart", {
-    type: 'bar',
-    data: {
-      labels: ['age <= 18', 'age <= 35', 'age <= 50', 'age <= 100'],
-      datasets: [{
-        label: 'number of Users',
-        data: this.userCountByAgeGroup,
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        title: {
-          display: true,
-          text: 'Age Groups of Users',
-          font: {
-            size: 18,
-            weight: 'bold',
-          }
-        },
-        legend: {
-          labels: {
-            font: {
-              size: 16,
-            }
-          }
-        }
+  createChart() {
+    this.chart = new Chart('MyChart', {
+      type: 'bar',
+      data: {
+        labels: ['age <= 18', 'age <= 35', 'age <= 50', 'age <= 100'],
+        datasets: [
+          {
+            label: 'number of Users',
+            data: this.userCountByAgeGroup,
+            borderWidth: 1,
+          },
+        ],
       },
-      scales: {
-        x: {
-          ticks: {
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Age Groups of Users',
             font: {
-              size: 16,
+              size: 18,
               weight: 'bold',
-            }
-          }
+            },
+          },
+          legend: {
+            labels: {
+              font: {
+                size: 16,
+              },
+            },
+          },
         },
-        y: {
-          beginAtZero: true,
-          ticks: {
-            font: {
-              size: 16,
-              weight: 'bold',
-            }
-          }
-        }
-      }
-    }
-  });
-}
+        scales: {
+          x: {
+            ticks: {
+              font: {
+                size: 16,
+                weight: 'bold',
+              },
+            },
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              font: {
+                size: 16,
+                weight: 'bold',
+              },
+            },
+          },
+        },
+      },
+    });
+  }
+
   getTimestamp() {
     for (let i = 0; i < this.usersService.allUsers.length; i++) {
-       let unix = this.usersService.allUsers[i].birthDate;
-       this.timestamp.push(unix)
+      let unix = this.usersService.allUsers[i].birthDate;
+      this.timestamp.push(unix);
     }
   }
 
@@ -91,7 +94,7 @@ createChart(){
         this.userCountByAgeGroup[2]++;
       } else {
         this.userCountByAgeGroup[3]++;
-      }};}  
+      }
     }
-   
-
+  }
+}

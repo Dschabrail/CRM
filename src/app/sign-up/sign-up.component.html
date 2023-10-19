@@ -1,0 +1,46 @@
+<div class="form-container mat-elevation-z5">
+    <div class="headline">
+        <h1>Sign up</h1><mat-icon (click)="reloadPage()" class="arrow">arrow_back</mat-icon>
+    </div>
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+        <mat-form-field appearance="outline" class="input-full">
+            <mat-label>Name</mat-label>
+            <input matInput type="email" formControlName="name">
+            <mat-error *ngIf="name?.errors?.['required']">
+                Name is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-full">
+            <mat-label>E-Mail</mat-label>
+            <input matInput type="email" formControlName="email">
+            <mat-error *ngIf="email?.errors?.['required']">
+                Email is required
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+                Please enter a correct email format
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-full">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-error *ngIf="password?.errors?.['required']">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-full">
+            <mat-label>Confirm password</mat-label>
+            <input matInput type="password" formControlName="confirmPassword">
+            <mat-error *ngIf="confirmPassword?.errors?.['required']">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+            Passwords dont't match
+        </mat-error>
+        <div class="button-cont">
+            <div class="buttons">
+                <button mat-raised-button type="submit">Sign up</button>
+            </div>
+        </div>
+    </form>
+</div>

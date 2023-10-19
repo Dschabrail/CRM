@@ -21,7 +21,8 @@ h1 {
 .dialog {
     position: relative;
     max-width: 480px;
-    overflow: hidden;
+    height: fit-content;
+    --mdc-outlined-text-field-focus-outline-color: #00b4d8 !important;
 }
 
 mat-progress-bar {
@@ -30,4 +31,10 @@ mat-progress-bar {
     right: -24px;
     top: 0;
     width: calc(100% + 48px);
+}
+
+@media(max-height: 800px) {
+    h1 {
+        font-size: 24px !important;
+    }
 }

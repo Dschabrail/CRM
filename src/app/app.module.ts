@@ -28,6 +28,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { DoughnutComponent } from './doughnut/doughnut.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { StartpageComponent } from './startpage/startpage.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 @NgModule({
@@ -40,6 +46,9 @@ import { DoughnutComponent } from './doughnut/doughnut.component';
     EditUserComponent,
     BarChartComponent,
     DoughnutComponent,
+    LoginComponent,
+    SignUpComponent,
+    StartpageComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +71,9 @@ import { DoughnutComponent } from './doughnut/doughnut.component';
     MatCardModule,
     MatTableModule,
     MatMenuModule,
+    ReactiveFormsModule,
+    provideAuth(() => getAuth()),
+    HotToastModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

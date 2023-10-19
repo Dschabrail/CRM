@@ -64,3 +64,19 @@ mat-card {
         }
     }
 }
+
+@media(max-width: 640px) {
+    tr {
+        font-size: 12px;
+    }
+    td {
+        padding-left: 16px;
+        &:last-child {
+            padding-right: 16px;
+        }
+    }
+.add-button {
+    bottom: 32px;
+    right: 32px;
+}
+}

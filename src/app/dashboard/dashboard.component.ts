@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FirebaseService } from '../firebase/firebase.service';
 
 
@@ -8,11 +8,14 @@ import { FirebaseService } from '../firebase/firebase.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
  
 
   constructor(public usersService: FirebaseService) {
-    this.usersService.getUser();
+   
+  }
+  ngOnInit(): void {
+     this.usersService.getUser();
   }
 
   

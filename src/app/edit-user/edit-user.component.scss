@@ -4,13 +4,16 @@
     width: 100%;
 }
 
-.buttons-cont {
+.headline {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
 }
 
 .buttons {
     display: flex;
+    justify-content: flex-end;
     gap: 24px;
 }
 
@@ -26,7 +29,7 @@ h1 {
 .dialog {
     position: relative;
     max-width: 480px;
-    overflow: hidden;
+    --mdc-outlined-text-field-focus-outline-color: #00b4d8 !important;
 }
 
 mat-progress-bar {
@@ -40,5 +43,12 @@ mat-progress-bar {
 .delete-btn {
     background-color: rgb(227, 47, 47) !important;
     color: white !important;
+    &:hover {
+        background-color: rgb(255, 0, 0) !important;
+    }
    
+}
+
+@media(max-width: 430px) {
+    
 }
