@@ -10,7 +10,6 @@ import { FirebaseService } from '../firebase/firebase.service';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  user = new User();
 
   constructor(public dialog: MatDialog, public usersService: FirebaseService) {}
 

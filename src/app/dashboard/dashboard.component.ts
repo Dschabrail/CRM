@@ -1,8 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { FirebaseService } from '../firebase/firebase.service';
 
-
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

@@ -1,6 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { FirebaseService } from '../firebase/firebase.service';
 
 @Component({
@@ -11,9 +10,9 @@ import { FirebaseService } from '../firebase/firebase.service';
 export class EditUserComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<EditUserComponent>,
-    private router: Router,
     public usersService: FirebaseService
   ) {}
+
   ngOnInit(): void {}
 
   async save() {
@@ -28,6 +27,5 @@ export class EditUserComponent implements OnInit {
   deleteUser() {
     this.usersService.deleteUser();
     this.closeDialog();
-    this.router.navigate(['user']);
   }
 }

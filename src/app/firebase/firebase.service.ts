@@ -8,6 +8,7 @@ import {
   updateDoc,
   deleteDoc,
 } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import { User } from 'src/models/user.class';
 
 @Injectable({
@@ -26,7 +27,7 @@ export class FirebaseService {
   formattedDate;
   singleUser;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -45,12 +46,8 @@ export class FirebaseService {
     this.unsubSingle = onSnapshot(
       this.getSingleDocRef('users', this.userId),
       (element) => {
-        
-        
         this.singleUser = element.data();
-        console.log(this.singleUser);
         this.formattedBirthDate(); 
-        
       }
     );
   }
@@ -58,7 +55,6 @@ export class FirebaseService {
   async save() {
     let docRef = this.getSingleDocRef('users', this.userId);
     this.singleUser.birthDate = this.singleUser.birthDate.getTime();
-    
     this.loading = true;
     await updateDoc(docRef, this.singleUser).catch((err) => {
       console.log(err);
@@ -74,11 +70,14 @@ export class FirebaseService {
       console.log(e);
     }).then(() => {
       this.loading = false;
+      this.user = new User();
+      this.birthDate = null;
     });
   }
 
   deleteUser() {
     deleteDoc(this.getSingleDocRef('users', this.userId));
+    this.router.navigate(['user']);
   }
 
   getSingleDocRef(collId: string, docId: string) {
@@ -95,10 +94,12 @@ export class FirebaseService {
   }
 
   formattedBirthDate() {
-    this.date = new Date(this.singleUser.birthDate);
-    const day = this.date.getDate();
-    const month = this.date.getMonth() + 1;
-    const year = this.date.getFullYear();
-    this.formattedDate = `${day}/${month}/${year}`;
+    if (this.singleUser) {
+      this.date = new Date(this.singleUser.birthDate);
+      const day = this.date.getDate();
+      const month = this.date.getMonth() + 1;
+      const year = this.date.getFullYear();
+      this.formattedDate = `${day}/${month}/${year}`;
+    }
   }
 }

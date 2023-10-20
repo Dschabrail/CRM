@@ -1,4 +1,4 @@
-<div matDialogContent class="dialog">
+<div matDialogContent class="dialog" *ngIf="usersService.singleUser">
     <mat-progress-bar *ngIf="usersService.loading" mode="indeterminate"></mat-progress-bar>
     <div class="headline">
         <h1 mat-dialog-title>Edit User</h1>
