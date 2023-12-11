@@ -75,7 +75,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     provideAuth(() => getAuth()),
     HotToastModule.forRoot(),
   ],
-  providers: [MatDialogRef],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
