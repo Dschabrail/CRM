@@ -10,7 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -75,7 +75,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     provideAuth(() => getAuth()),
     HotToastModule.forRoot(),
   ],
-  providers: [],
+  providers: [MatDialogRef],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

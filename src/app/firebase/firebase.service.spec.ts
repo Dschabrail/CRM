@@ -7,6 +7,7 @@ describe('FirebaseServicesService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
+
     service = TestBed.inject(FirebaseService);
   });
 

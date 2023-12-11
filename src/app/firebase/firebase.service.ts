@@ -89,9 +89,11 @@ export class FirebaseService {
   }
 
   ngOnDestroy() {
+    if(this.unsubList && this.unsubSingle) {
     this.unsubList();
-    this.unsubSingle()
+    this.unsubSingle();
   }
+}
 
   formattedBirthDate() {
     if (this.singleUser) {
