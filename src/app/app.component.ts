@@ -27,7 +27,7 @@ constructor(private router: Router) {
   }
 
   sidenavToggleResponsiv() {
-    if (window.innerWidth <= 1070 && this.sidenavOpen == true) {
+    if (window.innerWidth <= 1200 && this.sidenavOpen == true) {
       this.displayNone = true;
     } else {
       this.displayNone = false;
@@ -35,13 +35,13 @@ constructor(private router: Router) {
   }
 
   closeSidenav() {
-    if (window.innerWidth <= 1070) {
+    if (window.innerWidth <= 1200) {
       this.sidenavOpen = false;
     }
   }
 
   showIcon() {
-    if (window.innerWidth <= 1070) {
+    if (window.innerWidth <= 1200) {
       this.icon = true;
     } else {
       this.icon = false;

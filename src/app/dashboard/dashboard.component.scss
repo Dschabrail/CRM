@@ -60,7 +60,7 @@ section {
 
 .bar-card {
   height: 100%;
-  width: 70%;
+  width: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +68,7 @@ section {
 
 .doughnut-card {
   height: 100%;
-  width: 65%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,19 +77,44 @@ section {
   }
 }
 
-@media (max-width: 1070px) {
-  .doughnut {
-    width: max-content;
+.pie-card {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .pie {
+    height: 100%;
   }
 }
+
+@media (max-width: 1300px) {
+  .doughnut {
+    width: 95%;
+  }
+  .pie {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .doughnut {
+    height: 80% !important;
+  }
+  .pie {
+    height: 80% !important;
+  }
+}
+
 @media (max-width: 660px) {
-  .first-row .second-row {
+  .first-row {
     flex-direction: column;
     height: fit-content;
     gap: 24px;
   }
   .doughnut-card {
     width: 100%;
+    height: 100%;
   }
   .card {
     width: 100%;
@@ -98,18 +123,24 @@ section {
   section {
     gap: 24px;
   }
-}
+  .second-row {
+    flex-direction: column;
+    height: fit-content;
+    gap: 24px;
+  }
 
-@media (max-width: 560px) {
   .bar-card {
-    height: 310px;
+    width: 100%;
+    height: 500px;
+  }
+
+  .pie-card {
+    width: 100%;
+    height: 100%;
   }
 }
-
-@media (max-width: 400px) {
-  .doughnut {
-    width: 95%;
+@media (max-width: 500px) {
+  .bar-card {
+    height: 370px;
   }
 }
-
-

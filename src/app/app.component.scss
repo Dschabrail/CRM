@@ -64,7 +64,14 @@
   }
 }
 
-@media (max-width: 1070px) {
+
+@media (max-width: 1300px) {
+  .router-container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
   .sidenav {
     width: 100%;
   }
