@@ -50,14 +50,17 @@ section {
 }
 
 .second-row {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
   height: 53vh;
   max-width: 1600px;
+  width: 100%;
 }
 
 .bar-card {
   height: 100%;
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +83,7 @@ section {
   }
 }
 @media (max-width: 660px) {
-  .first-row {
+  .first-row .second-row {
     flex-direction: column;
     height: fit-content;
     gap: 24px;
@@ -94,9 +97,6 @@ section {
   }
   section {
     gap: 24px;
-  }
-  .second-row {
-    height: fit-content;
   }
 }
 

@@ -1,24 +1,24 @@
 <section>
-<div class="first-row">
-  <mat-card class="card">
-    <mat-card-header>
-      <mat-card-title>Users overall</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="seperator"></div>
-      <h2>{{usersService.allUsers.length}}</h2>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="doughnut-card">
-    <app-doughnut class="doughnut"></app-doughnut>
-  </mat-card>
-</div>
-<div class="second-row">
-  <mat-card class="bar-card">
-    <app-bar-chart class="bar"></app-bar-chart>
-  </mat-card>
-  <mat-card class="doughnut-card">
-    <app-chart-gender class="doughnut"></app-chart-gender>
-  </mat-card>
-</div>
+  <div class="first-row">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>USERS OVERALL</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="seperator"></div>
+        <h2>{{usersService.allUsers.length}}</h2>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="doughnut-card">
+      <app-doughnut class="doughnut"></app-doughnut>
+    </mat-card>
+  </div>
+  <div class="second-row">
+    <mat-card class="bar-card">
+      <app-bar-chart class="bar"></app-bar-chart>
+    </mat-card>
+    <mat-card class="doughnut-card">
+      <app-chart-gender class="doughnut"></app-chart-gender>
+    </mat-card>
+  </div>
 </section>

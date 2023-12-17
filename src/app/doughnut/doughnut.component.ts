@@ -37,7 +37,7 @@ export class DoughnutComponent implements OnInit {
         labels: this.cityLabels,
         datasets: [
           {
-            label: 'Users by City',
+            label: '',
             data: this.cityData,
             backgroundColor: this.colors,
             hoverOffset: 10,
@@ -49,7 +49,7 @@ export class DoughnutComponent implements OnInit {
         plugins: {
           title: {
             display: true,
-            text: 'Users by City',
+            text: 'USERS BY CITY',
             font: {
               size: 18,
               weight: 'bold',

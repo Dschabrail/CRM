@@ -26,7 +26,7 @@ export class BarChartComponent implements OnInit {
         labels: ['age <= 18', 'age <= 35', 'age <= 50', 'age <= 100'],
         datasets: [
           {
-            label: 'number of Users',
+            label: 'number of users',
             data: this.userCountByAgeGroup,
             borderWidth: 1,
           },
@@ -37,7 +37,7 @@ export class BarChartComponent implements OnInit {
         plugins: {
           title: {
             display: true,
-            text: 'Age Groups of Users',
+            text: 'AGE GROUP OF USERS',
             font: {
               size: 18,
               weight: 'bold',

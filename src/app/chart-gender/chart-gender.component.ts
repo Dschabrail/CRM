@@ -12,8 +12,9 @@ export class ChartGenderComponent {
   genderData = []; 
   genderLabels = []; 
   colors = [
-    'rgb(255, 99, 132)',
     'rgb(54, 162, 235)',
+    'rgb(255, 99, 132)',
+  
   ];
 
   constructor(public usersService: FirebaseService) {}
