@@ -11,6 +11,14 @@
             <input [disabled]="usersService.loading" [(ngModel)]="usersService.user.lastName" matInput>
         </mat-form-field>
     </div>
+    <mat-form-field appearance="outline">
+        <mat-label>Gender</mat-label>
+        <mat-select>
+            @for (gender of genders; track gender) {
+            <mat-option [value]="gender.value">{{gender.viewValue}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
     <div>
         <mat-form-field appearance="outline" class="input-full">
             <mat-label>E-Mail</mat-label>
@@ -18,7 +26,8 @@
         </mat-form-field>
         <mat-form-field class="input-full" appearance="outline">
             <mat-label>Birth Date</mat-label>
-            <input [disabled]="usersService.loading" [(ngModel)]="usersService.birthDate" matInput [matDatepicker]="picker">
+            <input [disabled]="usersService.loading" [(ngModel)]="usersService.birthDate" matInput
+                [matDatepicker]="picker">
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

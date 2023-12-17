@@ -34,6 +34,7 @@ import { StartpageComponent } from './startpage/startpage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     MatCardModule,
     MatTableModule,
     MatMenuModule,
+    MatSelectModule,
     ReactiveFormsModule,
     provideAuth(() => getAuth()),
     HotToastModule.forRoot(),

@@ -9,8 +9,8 @@ import { FirebaseService } from '../firebase/firebase.service';
 })
 export class DoughnutComponent implements OnInit {
   chart: any;
-  cityData = []; // Ein Array, um die Anzahl der Benutzer pro Stadt zu speichern
-  cityLabels = []; // Ein Array, um die Stadtnamen zu speichern
+  cityData = []; 
+  cityLabels = []; 
   colors = [
     '#fd7f6f',
     '#7eb0d5',
@@ -24,7 +24,7 @@ export class DoughnutComponent implements OnInit {
   ];
 
   constructor(public usersService: FirebaseService) {}
-
+ 
   ngOnInit(): void {
     this.usersService.getUser();
     this.getCityData();
@@ -68,6 +68,7 @@ export class DoughnutComponent implements OnInit {
       },
     });
   }
+
   getCityData() {
     const userData = this.usersService.allUsers;
     userData.forEach((user) => {

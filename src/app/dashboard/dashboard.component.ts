@@ -8,13 +8,10 @@ import { FirebaseService } from '../firebase/firebase.service';
 })
 export class DashboardComponent implements OnInit{
  
-
   constructor(public usersService: FirebaseService) {
-   
   }
+
   ngOnInit(): void {
      this.usersService.getUser();
   }
-
-  
 }

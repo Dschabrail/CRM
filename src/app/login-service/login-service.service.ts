@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
 import { from, switchMap } from 'rxjs';
+import { FirebaseService } from '../firebase/firebase.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ import { from, switchMap } from 'rxjs';
 
 export class LoginServiceService {
 
-  constructor(private auth: Auth) { }
+  constructor(private auth: Auth, public usersService: FirebaseService) {
+    this.usersService.getUser();
+   }
 
   login(username: string, password: string) {
    return from(signInWithEmailAndPassword(this.auth, username, password)
