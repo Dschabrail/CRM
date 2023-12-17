@@ -35,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
 import {MatSelectModule} from '@angular/material/select';
+import { ChartGenderComponent } from './chart-gender/chart-gender.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import {MatSelectModule} from '@angular/material/select';
     LoginComponent,
     SignUpComponent,
     StartpageComponent,
+    ChartGenderComponent,
   ],
   imports: [
     BrowserModule,
