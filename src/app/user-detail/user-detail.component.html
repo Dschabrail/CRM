@@ -1,5 +1,5 @@
 <section *ngIf="usersService.singleUser">
-    <mat-card  class="profil-card">
+    <mat-card class="profil-card">
         <button class="icon" mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>more_vert</mat-icon>
         </button>
@@ -8,7 +8,10 @@
                 <span>Edit</span></button>
         </mat-menu>
         <div class="profil">
-            <img class="profil-img" src="./assets/img/profil.png" alt="">
+            <img *ngIf="usersService.singleUser.gender == 'male'" class="profil-img" src="./assets/img/profil.png"
+                alt="profil picture">
+            <img *ngIf="usersService.singleUser.gender == 'female'" class="profil-img"
+                src="./assets/img/profil-female.png" alt="profil picture">
             <div>
                 <h1>{{usersService.singleUser.firstName}} {{usersService.singleUser.lastName}}</h1>
                 <span>{{usersService.singleUser.email}}</span><br>
