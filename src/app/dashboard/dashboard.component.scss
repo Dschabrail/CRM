@@ -89,6 +89,14 @@ section {
   }
 }
 
+.animation {
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1300px) {
   .doughnut {
     width: 95%;

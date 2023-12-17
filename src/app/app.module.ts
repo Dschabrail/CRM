@@ -36,6 +36,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
 import {MatSelectModule} from '@angular/material/select';
 import { ChartGenderComponent } from './chart-gender/chart-gender.component';
+import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ChartGenderComponent } from './chart-gender/chart-gender.component';
     SignUpComponent,
     StartpageComponent,
     ChartGenderComponent,
+    LoadingAnimationComponent,
   ],
   imports: [
     BrowserModule,

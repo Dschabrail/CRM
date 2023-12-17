@@ -65,6 +65,14 @@ mat-card {
     }
 }
 
+.animation {
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 @media(max-width: 640px) {
     tr {
         font-size: 12px;

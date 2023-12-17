@@ -1,4 +1,7 @@
-<section>
+<div class="animation" *ngIf="usersService.allUsers.length == 0">
+  <app-loading-animation></app-loading-animation>
+</div>
+<section *ngIf="usersService.allUsers.length > 0">
   <div class="first-row">
     <mat-card class="card">
       <mat-card-header>

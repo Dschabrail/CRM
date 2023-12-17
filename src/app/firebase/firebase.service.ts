@@ -40,7 +40,6 @@ export class FirebaseService {
         this.allUsers.push(userData);
       });
     });
-    console.log(this.allUsers);
   }
 
   getSingleUser() {

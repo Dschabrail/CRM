@@ -20,8 +20,7 @@ export class ChartGenderComponent {
   constructor(public usersService: FirebaseService) {}
  
   ngOnInit(): void {
-    this.usersService.getUser();
-    this.getCityData();
+    this.getGenderData();
   }
   
   createChart() {
@@ -63,7 +62,7 @@ export class ChartGenderComponent {
     });
   }
 
-  getCityData() {
+  getGenderData() {
     const userData = this.usersService.allUsers;
     userData.forEach((user) => {
       const gender = user.gender;

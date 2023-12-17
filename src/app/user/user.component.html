@@ -1,21 +1,24 @@
-<section>
-<mat-card>
-    <table class="user-table">
-        <tr>
-            <th>Name</th>
-            <th>E-Mail</th>
-            <th>City</th>
-        </tr>
-        <tr *ngFor="let user of usersService.allUsers" routerLink="{{user.id}}">
-            <td>{{user.firstName}} {{user.lastName}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.city}}</td>
-        </tr>
-   
-    </table>
-</mat-card>
-<button (click)="openDialog()" matTooltip="Add user" matTooltipPosition="above" matTooltipClass="tooltip"
-    class="add-button" mat-fab color="primary">
-    <mat-icon>person_add</mat-icon>
-</button>
+<div class="animation" *ngIf="usersService.allUsers.length == 0">
+    <app-loading-animation></app-loading-animation>
+</div>
+<section *ngIf="usersService.allUsers.length > 0">
+    <mat-card>
+        <table class="user-table">
+            <tr>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th>City</th>
+            </tr>
+            <tr *ngFor="let user of usersService.allUsers" routerLink="{{user.id}}">
+                <td>{{user.firstName}} {{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.city}}</td>
+            </tr>
+
+        </table>
+    </mat-card>
+    <button (click)="openDialog()" matTooltip="Add user" matTooltipPosition="above" matTooltipClass="tooltip"
+        class="add-button" mat-fab color="primary">
+        <mat-icon>person_add</mat-icon>
+    </button>
 </section>
