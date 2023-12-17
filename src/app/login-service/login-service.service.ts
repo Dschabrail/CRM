@@ -23,5 +23,4 @@ export class LoginServiceService {
     return from(createUserWithEmailAndPassword(this.auth, email, password)
     ).pipe(switchMap(({user}) => updateProfile(user, { displayName: name})))
 }
-
 }

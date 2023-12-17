@@ -47,7 +47,7 @@ export class LoginComponent {
         error: 'There was an error'
       })
     ).subscribe(() => {
-      this.router.navigate(['/user']);
+      this.router.navigate(['/dashboard']);
     });
   }
 }

@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -10,7 +10,6 @@ import {
 import { LoginServiceService } from '../login-service/login-service.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
-import { Auth } from '@angular/fire/auth';
 
 export function passwordMatchValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -25,8 +24,6 @@ export function passwordMatchValidator(): ValidatorFn {
     return null;
   };
 }
-
-
 
 @Component({
   selector: 'app-sign-up',
@@ -60,7 +57,7 @@ export class SignUpComponent {
         error: ({message}) => `${message}`
       })
     ).subscribe(() => {
-      this.router.navigate(['/user']);
+      this.router.navigate(['/dashboard']);
     })
   }
 
