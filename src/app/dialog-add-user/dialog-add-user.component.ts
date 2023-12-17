@@ -15,8 +15,8 @@ interface Gender {
 
 export class DialogAddUserComponent {
   genders: Gender[] = [
-    {value: 'male', viewValue: 'Male'},
-    {value: 'female', viewValue: 'Female'},
+    {value: 'male', viewValue: 'male'},
+    {value: 'female', viewValue: 'female'},
   ];
 
   constructor(
