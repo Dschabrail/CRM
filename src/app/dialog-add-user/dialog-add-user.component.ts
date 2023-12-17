@@ -14,7 +14,7 @@ interface Gender {
 })
 
 export class DialogAddUserComponent {
-  foods: Gender[] = [
+  genders: Gender[] = [
     {value: 'male', viewValue: 'Male'},
     {value: 'female', viewValue: 'Female'},
   ];

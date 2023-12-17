@@ -13,10 +13,9 @@
     </div>
     <mat-form-field appearance="outline">
         <mat-label>Gender</mat-label>
-        <mat-select>
-            @for (gender of genders; track gender) {
-            <mat-option [value]="gender.value">{{gender.viewValue}}</mat-option>
-            }
+        <mat-select [disabled]="usersService.loading" [(value)]="usersService.user.gender">
+            <mat-option *ngFor="let gender of genders"
+                [value]="gender.value">{{gender.viewValue}}</mat-option>
         </mat-select>
     </mat-form-field>
     <div>
