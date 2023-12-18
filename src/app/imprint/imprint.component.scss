@@ -1,0 +1,57 @@
+mat-card {
+    max-height: 89vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.Imprint {
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+}
+h1 {
+  margin-block-start: 0;
+  height: fit-content;
+  display: flex;
+}
+a {
+  color: black;
+}
+.break {
+  color: #00b4d8;
+  width: 100%;
+  margin: 50px 0;
+}
+img {
+  padding: 50px 100px 0 100px;
+  height: 50px;
+  cursor: pointer;
+}
+p {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .Imprint {
+    padding: 50px;
+  }
+  img {
+    padding: 50px 100px 20px 50px;
+    height: 50px;
+    height: 40px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  a {
+    font-size: 16px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
