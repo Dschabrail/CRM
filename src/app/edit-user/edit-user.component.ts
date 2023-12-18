@@ -15,7 +15,7 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  async save() {
+  save() {
     this.usersService.save();
     this.closeDialog();
   }

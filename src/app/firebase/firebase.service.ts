@@ -47,32 +47,44 @@ export class FirebaseService {
       this.getSingleDocRef('users', this.userId),
       (element) => {
         this.singleUser = element.data();
-        this.formattedBirthDate(); 
+        this.formattedBirthDate();
       }
     );
   }
 
   async save() {
     let docRef = this.getSingleDocRef('users', this.userId);
-    this.singleUser.birthDate = this.singleUser.birthDate.getTime();
+    this.checkBirthDate();
     this.loading = true;
-    await updateDoc(docRef, this.singleUser).catch((err) => {
-      console.log(err);
-    }).then(() => {
-      this.loading = false;
-    });
+    await updateDoc(docRef, this.singleUser)
+      .catch((err) => {
+        console.log(err);
+      })
+      .then(() => {
+        this.loading = false;
+      });
+  }
+
+  checkBirthDate() {
+    if (typeof this.singleUser.birthDate === 'number') {
+      return this.singleUser.birthDate;
+    } else {
+      return (this.singleUser.birthDate = this.singleUser.birthDate.getTime());
+    }
   }
 
   async addUser() {
     this.loading = true;
     this.user.birthDate = this.birthDate.getTime();
-    await addDoc(this.getUserRef(), this.user.toJSON()).catch((e) => {
-      console.log(e);
-    }).then(() => {
-      this.loading = false;
-      this.user = new User();
-      this.birthDate = null;
-    });
+    await addDoc(this.getUserRef(), this.user.toJSON())
+      .catch((e) => {
+        console.log(e);
+      })
+      .then(() => {
+        this.loading = false;
+        this.user = new User();
+        this.birthDate = null;
+      });
   }
 
   deleteUser() {
@@ -89,11 +101,11 @@ export class FirebaseService {
   }
 
   ngOnDestroy() {
-    if(this.unsubList && this.unsubSingle) {
-    this.unsubList();
-    this.unsubSingle();
+    if (this.unsubList && this.unsubSingle) {
+      this.unsubList();
+      this.unsubSingle();
+    }
   }
-}
 
   formattedBirthDate() {
     if (this.singleUser) {

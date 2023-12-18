@@ -26,7 +26,6 @@ export class DoughnutComponent implements OnInit {
   constructor(public usersService: FirebaseService) {}
  
   ngOnInit(): void {
-    this.usersService.getUser();
     this.getCityData();
   }
   

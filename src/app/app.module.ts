@@ -10,7 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -32,12 +32,12 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StartpageComponent } from './startpage/startpage.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { ChartGenderComponent } from './chart-gender/chart-gender.component';
 import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
-
+import { ImprintComponent } from './imprint/imprint.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +54,7 @@ import { LoadingAnimationComponent } from './loading-animation/loading-animation
     StartpageComponent,
     ChartGenderComponent,
     LoadingAnimationComponent,
+    ImprintComponent,
   ],
   imports: [
     BrowserModule,

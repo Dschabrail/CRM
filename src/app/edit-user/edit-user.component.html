@@ -2,7 +2,8 @@
     <mat-progress-bar *ngIf="usersService.loading" mode="indeterminate"></mat-progress-bar>
     <div class="headline">
         <h1 mat-dialog-title>Edit User</h1>
-        <button class="delete-btn" [disabled]="usersService.loading"mat-raised-button (click)="deleteUser()">Delete</button>
+        <button class="delete-btn" [disabled]="usersService.loading" mat-raised-button
+            (click)="deleteUser()">Delete</button>
     </div>
     <div class="input">
         <mat-form-field appearance="outline">

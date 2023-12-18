@@ -1,3 +1,6 @@
+<div class="animation" *ngIf="!usersService.singleUser">
+    <app-loading-animation></app-loading-animation>
+</div>
 <section *ngIf="usersService.singleUser">
     <mat-card class="profil-card">
         <button class="icon" mat-icon-button [matMenuTriggerFor]="menu">

@@ -31,6 +31,14 @@
   top: 9px;
 }
 
+.animation {
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media(max-width: 450px) {
   h1 {
     font-size: 22px;
