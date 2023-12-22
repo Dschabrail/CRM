@@ -5,9 +5,9 @@
             <mat-icon *ngIf="icon" class="arrow" (click)="sidenavToggle()" >arrow_back</mat-icon>
         </div>
         <ul class="menu-items">
-            <li (click)="closeSidenav()" routerLink="/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</li>
-            <li (click)="closeSidenav()" routerLink="/user"><mat-icon>account_circle</mat-icon>User</li>
-            <li (click)="closeSidenav()" routerLink="/imprint"><mat-icon>policy</mat-icon>Imprint</li>
+            <li [class.focused-list]="isOnDashboard" (click)="closeSidenav()" routerLink="/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</li>
+            <li [class.focused-list]="isOnUser" (click)="closeSidenav()" routerLink="/user"><mat-icon>account_circle</mat-icon>User</li>
+            <li [class.focused-list]="isOnImprint" (click)="closeSidenav()" routerLink="/imprint"><mat-icon>policy</mat-icon>Imprint</li>
             <li (click)="closeSidenav()" routerLink="/"><mat-icon>logout</mat-icon>Logout</li>
         </ul>
     </mat-drawer>

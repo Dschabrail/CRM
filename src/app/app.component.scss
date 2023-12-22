@@ -45,6 +45,10 @@
   }
 }
 
+.focused-list {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .router-container {
   padding: 16px 56px;
   min-height: calc(100vh - 96px);
@@ -63,7 +67,6 @@
     border-radius: 100%;
   }
 }
-
 
 @media (max-width: 1300px) {
   .router-container {

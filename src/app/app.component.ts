@@ -7,14 +7,18 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  sidenavOpen = false;
-  displayNone = false;
-  icon = false;
-  onStartpage = true;
+  public isOnDashboard: boolean;
+  public isOnUser: boolean;
+  public isOnImprint: boolean;
+  sidenavOpen: boolean = false;
+  displayNone: boolean = false;
+  icon: boolean = false;
+  onStartpage: boolean = true;
 
-constructor(private router: Router) {
-  this.checkRoute()
-}
+  constructor(private router: Router) {
+    this.checkRoute();
+    this.checkOnWichPage();
+  }
 
   sidenavToggle() {
     if (this.sidenavOpen == false) {
@@ -49,7 +53,7 @@ constructor(private router: Router) {
   }
 
   checkRoute() {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (event.url === '/') {
           this.onStartpage = true;
@@ -59,5 +63,35 @@ constructor(private router: Router) {
         }
       }
     });
+    this.checkSideNavOpen();
+  }
+
+  checkOnWichPage() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/dashboard') {
+          this.isOnDashboard = true;
+          this.isOnImprint = false;
+          this.isOnUser = false;
+        } else if (event.url === '/user') {
+          this.isOnDashboard = false;
+          this.isOnImprint = false;
+          this.isOnUser = true;
+        } else if (event.url === '/imprint') {
+          this.isOnDashboard = false;
+          this.isOnImprint = true;
+          this.isOnUser = false;
+        }
+      }
+    });
+  }
+
+  checkSideNavOpen() {
+    debugger;
+    if (!this.onStartpage && window.innerWidth > 1450) {
+      this.sidenavOpen = true;
+    } else {
+      this.sidenavOpen = false;
+    }
   }
 }
