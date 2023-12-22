@@ -60,10 +60,10 @@ export class AppComponent {
           this.sidenavOpen = false;
         } else {
           this.onStartpage = false;
+          this.checkSideNavOpen();
         }
       }
     });
-    this.checkSideNavOpen();
   }
 
   checkOnWichPage() {
@@ -87,8 +87,7 @@ export class AppComponent {
   }
 
   checkSideNavOpen() {
-    debugger;
-    if (!this.onStartpage && window.innerWidth > 1450) {
+    if ( window.innerWidth > 1450) {
       this.sidenavOpen = true;
     } else {
       this.sidenavOpen = false;
