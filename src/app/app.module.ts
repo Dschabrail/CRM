@@ -39,6 +39,8 @@ import { ChartGenderComponent } from './chart-gender/chart-gender.component';
 import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { ToolsComponent } from './tools/tools.component';
+import { CalculatorComponent } from './tools/calculator/calculator.component';
+import { CurrencyCalculatorComponent } from './tools/currency-calculator/currency-calculator.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { ToolsComponent } from './tools/tools.component';
     LoadingAnimationComponent,
     ImprintComponent,
     ToolsComponent,
+    CalculatorComponent,
+    CurrencyCalculatorComponent,
   ],
   imports: [
     BrowserModule,
