@@ -10,6 +10,7 @@ export class AppComponent {
   public isOnDashboard: boolean;
   public isOnUser: boolean;
   public isOnImprint: boolean;
+  public isOnTools: boolean;
   sidenavOpen: boolean = false;
   displayNone: boolean = false;
   icon: boolean = false;
@@ -73,13 +74,21 @@ export class AppComponent {
           this.isOnDashboard = true;
           this.isOnImprint = false;
           this.isOnUser = false;
+          this.isOnTools = false;
         } else if (event.url === '/user') {
           this.isOnDashboard = false;
           this.isOnImprint = false;
           this.isOnUser = true;
+          this.isOnTools = false;
         } else if (event.url === '/imprint') {
           this.isOnDashboard = false;
           this.isOnImprint = true;
+          this.isOnUser = false;
+          this.isOnTools = false;
+        } else if (event.url === '/tools') {
+          this.isOnTools = true;
+          this.isOnDashboard = false;
+          this.isOnImprint = false;
           this.isOnUser = false;
         }
       }
@@ -87,7 +96,7 @@ export class AppComponent {
   }
 
   checkSideNavOpen() {
-    if ( window.innerWidth > 1450) {
+    if (window.innerWidth > 1450) {
       this.sidenavOpen = true;
     } else {
       this.sidenavOpen = false;

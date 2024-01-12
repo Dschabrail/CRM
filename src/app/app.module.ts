@@ -38,6 +38,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ChartGenderComponent } from './chart-gender/chart-gender.component';
 import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
 import { ImprintComponent } from './imprint/imprint.component';
+import { ToolsComponent } from './tools/tools.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ImprintComponent } from './imprint/imprint.component';
     ChartGenderComponent,
     LoadingAnimationComponent,
     ImprintComponent,
+    ToolsComponent,
   ],
   imports: [
     BrowserModule,

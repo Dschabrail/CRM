@@ -7,7 +7,7 @@
         <ul class="menu-items">
             <li [class.focused-list]="isOnDashboard" (click)="closeSidenav()" routerLink="/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</li>
             <li [class.focused-list]="isOnUser" (click)="closeSidenav()" routerLink="/user"><mat-icon>account_circle</mat-icon>User</li>
-            <li [class.focused-list]="isOnUser" (click)="closeSidenav()" routerLink="/user"><mat-icon>home_repair_service</mat-icon>Tools</li>
+            <li [class.focused-list]="isOnTools" (click)="closeSidenav()" routerLink="/tools"><mat-icon>home_repair_service</mat-icon>Tools</li>
             <li [class.focused-list]="isOnImprint" (click)="closeSidenav()" routerLink="/imprint"><mat-icon>policy</mat-icon>Imprint</li>
             <li (click)="closeSidenav()" routerLink="/"><mat-icon>logout</mat-icon>Logout</li>
         </ul>
