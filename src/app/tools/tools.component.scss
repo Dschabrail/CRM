@@ -1,4 +1,13 @@
-section{
-    display: flex;
-    gap: 40px;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 80px;
+}
+
+@media (max-width: 900px) {
+  section {
+    flex-direction: column;
+  }
 }
